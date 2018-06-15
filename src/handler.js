@@ -1,9 +1,9 @@
-import * as GoogleImages from 'google-images';
-import * as randomItemInArray from 'random-item-in-array';
+var GoogleImages = require('google-images');
+var randomItemInArray = require('random-item-in-array');
 
-if (!global._babelPolyfill) {
-	require('babel-polyfill');
-}
+// if (!global._babelPolyfill) {
+// 	require('babel-polyfill');
+// }
 
 exports.header = async (event, context, cb) => {
 	const html = `
@@ -27,11 +27,11 @@ exports.header = async (event, context, cb) => {
 	cb(null, response);
 }
 
-export const normal = (event, context, cb) => {
+exports.normal = (event, context, cb) => {
 	cb(null, 'normal response');
 }
 
-export const promise = (event, context, cb) => {
+exports.promise = (event, context, cb) => {
 	const p = new Promise((resolve, reject) => {
 		resolve('promise success');
 	});
@@ -40,7 +40,7 @@ export const promise = (event, context, cb) => {
 		.catch(e => cb(e));
 }
 
-export const bongBot = (event, context, cb) => {
+exports.bongBot = (event, context, cb) => {
 	const title = `bong ${event.query.text}`;
 
 	var client = new GoogleImages(
