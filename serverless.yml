@@ -9,7 +9,8 @@ provider:
   name: aws
   runtime: nodejs6.10
   environment:
-    google_cse_id: "004153151002543507975:hfhtuy-o10a"
+    google_cse_id: "XXX"
+    google_cse_api_key: "XXXX"
 
 custom:
   webpackIncludeModules: true
@@ -26,7 +27,7 @@ functions:
     events:
       - http:
           path: normal
-          method: get
+          method: get3
           integration: lambda
   bongBot:
     handler: handler.bongBot
