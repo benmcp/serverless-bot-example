@@ -27,7 +27,7 @@ functions:
     events:
       - http:
           path: normal
-          method: get3
+          method: get
           integration: lambda
   bongBot:
     handler: handler.bongBot
